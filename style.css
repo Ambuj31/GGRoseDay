@@ -9,25 +9,27 @@ body, html {
 }
 
 h1{
-  text-align: right;
-  margin-top: 550px;
+  text-align: center;
   width: auto;
-  font-size: 18px;
+  margin-top: 2rem;
+  font-size: 1rem;
   font-family: 'Courier New', Courier, monospace;
 }
 p{
-  text-align: justify;
-  margin-left: 250px;
   font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  margin: 1rem auto;
+  max-width: 90%;
   color: aqua;
 
 }
 .rose {
-  position: relative;
-  width: 100px;
-  height: 100px;
+ position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
   margin-left: -50px;
   margin-top: -50px;
 }
@@ -355,4 +357,53 @@ p{
     width: max-content;
     font-weight: lighter;
     margin-left: -5rem;
+}
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .rose {
+    transform: translate(-50%, -50%) scale(0.75);
+  }
+
+  h1 {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 0.9rem;
+    margin: 0.5rem auto;
+  }
+
+  #prompt {
+    font-size: 1.4rem;
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .rose {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+
+  .rose .text span:nth-child(1) {
+    font-size: 20px;
+  }
+
+  .rose .text span:nth-child(2) {
+    font-size: 36px;
+  }
+}
+@media (max-width: 768px) {
+  .rose .petal {
+    transform: scale(1.8) rotate(2490deg) !important;
+  }
+
+  .rose .text {
+    opacity: 1;
+  }
 }
